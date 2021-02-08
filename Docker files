@@ -32,24 +32,24 @@ First of all the jmeter base image needs to be created from the opend-jdk image,
 
 ============Build, tag and push the base image============
 
-		docker build --tag="kubernautslabs/jmeter-base:latest" -f Dockerfile-base .
-		docker push kubernautslabs/jmeter-base:latest
+		docker build --tag="cgonzalez/jmeter-base:latest" -f Dockerfile-base .
+		docker push cgonzalez/jmeter-base:latest
     
 
 ============JMETER-MASTER DOCKER FILE============
 
-		FROM kubernautslabs/jmeter-base:latest
+		FROM cgonzalez/jmeter-base:latest
 		MAINTAINER Kubernauts-lab
 		
 		EXPOSE 60000
 
 ============Build, tag and push the master image============
 
-		docker build --tag="kubernautslabs/jmeter-master:latest" -f Dockerfile-master .
-		docker push kubernautslabs/jmeter-master:latest
+		docker build --tag="cgonzalez/jmeter-master:latest" -f Dockerfile-master .
+		docker push cgonzalez/jmeter-master:latest
 
 ================JMETER-SLAVES DOCKER FILE=====================
-		FROM kubernautslabs/jmeter-base
+		FROM cgonzalez/jmeter-base
 		MAINTAINER Kubernauts-lab
 		
 		EXPOSE 1099 50000
@@ -62,10 +62,10 @@ First of all the jmeter base image needs to be created from the opend-jdk image,
 
 ============Build, tag and push the slave image:================
 
-		docker build --tag="kubernautslabs/jmeter-slave:latest" -f Dockerfile-slave .
-		docker push kubernautslabs/jmeter-slave:latest
+		docker build --tag="cgonzalez/jmeter-slave:latest" -f Dockerfile-slave .
+		docker push cgonzalez/jmeter-slave:latest
 
 ================JMETER-REPORTER DOCKER FILE=====================
 
-		docker build --tag="kubernautslabs/jmeter-reporter" -f Dockerfile-reporter .
-		docker push kubernautslabs/jmeter-reporter
+		docker build --tag="cgonzalez/jmeter-reporter" -f Dockerfile-reporter .
+		docker push cgonzalez/jmeter-reporter
