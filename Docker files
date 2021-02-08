@@ -5,7 +5,7 @@ First of all the jmeter base image needs to be created from the opend-jdk image,
 ============JMETER BASE DOCKER FILE============
 
 		FROM openjdk:8-jre-slim
-		MAINTAINER Kubernauts-lab
+		MAINTAINER cgonzalez
 		
 		ARG JMETER_VERSION=4.0
 		
@@ -32,24 +32,24 @@ First of all the jmeter base image needs to be created from the opend-jdk image,
 
 ============Build, tag and push the base image============
 
-		docker build --tag="cgonzalez/jmeter-base:latest" -f Dockerfile-base .
-		docker push cgonzalez/jmeter-base:latest
+		docker build --tag="chgonzalez/jmeter-base:latest" -f Dockerfile-base .
+		docker push chgonzalez/jmeter-base:latest
     
 
 ============JMETER-MASTER DOCKER FILE============
 
-		FROM cgonzalez/jmeter-base:latest
+		FROM chgonzalez/jmeter-base:latest
 		MAINTAINER Kubernauts-lab
 		
 		EXPOSE 60000
 
 ============Build, tag and push the master image============
 
-		docker build --tag="cgonzalez/jmeter-master:latest" -f Dockerfile-master .
-		docker push cgonzalez/jmeter-master:latest
+		docker build --tag="chgonzalez/jmeter-master:latest" -f Dockerfile-master .
+		docker push chgonzalez/jmeter-master:latest
 
 ================JMETER-SLAVES DOCKER FILE=====================
-		FROM cgonzalez/jmeter-base
+		FROM chgonzalez/jmeter-base
 		MAINTAINER Kubernauts-lab
 		
 		EXPOSE 1099 50000
@@ -62,10 +62,10 @@ First of all the jmeter base image needs to be created from the opend-jdk image,
 
 ============Build, tag and push the slave image:================
 
-		docker build --tag="cgonzalez/jmeter-slave:latest" -f Dockerfile-slave .
-		docker push cgonzalez/jmeter-slave:latest
+		docker build --tag="chgonzalez/jmeter-slave:latest" -f Dockerfile-slave .
+		docker push chgonzalez/jmeter-slave:latest
 
 ================JMETER-REPORTER DOCKER FILE=====================
 
-		docker build --tag="cgonzalez/jmeter-reporter" -f Dockerfile-reporter .
-		docker push cgonzalez/jmeter-reporter
+		docker build --tag="chgonzalez/jmeter-reporter" -f Dockerfile-reporter .
+		docker push chgonzalez/jmeter-reporter
