@@ -1,4 +1,4 @@
-FROM kubernautslabs/jmeter-base:latest
-MAINTAINER Kubernauts-lab
+FROM cgonzalez/jmeter-base:latest
+MAINTAINER cgonzalez
 		
 EXPOSE 60000
