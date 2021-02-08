@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-slim
-MAINTAINER cgonzalez
+MAINTAINER chgonzalez
 		
 ARG JMETER_VERSION=5.3
 		
