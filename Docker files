@@ -5,7 +5,7 @@ First of all the jmeter base image needs to be created from the opend-jdk image,
 ============JMETER BASE DOCKER FILE============
 
 		FROM openjdk:8-jre-slim
-		MAINTAINER cgonzalez
+		MAINTAINER chgonzalez
 		
 		ARG JMETER_VERSION=4.0
 		
