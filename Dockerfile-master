@@ -1,4 +1,4 @@
-FROM cgonzalez/jmeter-base:latest
-MAINTAINER cgonzalez
+FROM chgonzalez/jmeter-base:latest
+MAINTAINER chgonzalez
 		
 EXPOSE 60000
